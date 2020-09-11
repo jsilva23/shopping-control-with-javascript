@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
             <div class="navbar-header">
                 <a id="navTitle" href="index.html" class="navbar-brand"></a>
@@ -16,6 +16,22 @@
     </nav>
 
     <div class="container-fluid">
+        <div class="form-inline">
+            <div class="form-group">
+                <input type="text" class="form-control" id="desc" placeholder="Description">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="amount" placeholder="Amount">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="value" placeholder="Value">
+            </div>
+            <samp id="btnUpdate" style="display: none;">
+                <button onclick="updateData()" class="btn btn-light">Save</button>
+                <button onclick="resetForm()" class="btn btn-light">Cancel</button>
+            </samp>
+            <button id="btnAdd" onclick="addData()" class="btn btn-light">Add</button>
+        </div>
         <table id="listTable" class="table">
             
         </table>
