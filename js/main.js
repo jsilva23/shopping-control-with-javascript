@@ -15,10 +15,23 @@ function getTotal(list) {
 function setList(list) {
     let table = '<thead><tr><td>Description</td><td>Amount</td><td>Value</td><td>Action</td></tr></thead><tbody>';
     for (let key in list) {
-        table += '<tr><td>'+ list[key].desc +'</td><td>'+ list[key].amount +'</td><td>'+ list[key].value +'</td><td>Edit | Delete</td></tr>';
+        table += '<tr><td>'+ formatDesc(list[key].desc) +'</td><td>'+ list[key].amount +'</td><td>'+ formatValue(list[key].value) +'</td><td>Edit | Delete</td></tr>';
     }
     table += '</tbody>';
     document.getElementById('listTable').innerHTML = table;
+}
+
+function formatDesc(desc) {
+    let str = desc.toLowerCase();
+    str = str.charAt(0).toUpperCase() + str.slice(1);
+    return str;
+}
+
+function formatValue(value) {
+    let str = parseFloat(value).toFixed(2) + '';
+    str = str.replace('.', ',');
+    str = '$ ' + str;
+    return str;
 }
 
 setList(list);
