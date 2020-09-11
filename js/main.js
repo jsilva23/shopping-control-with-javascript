@@ -12,4 +12,15 @@ function getTotal(list) {
     return total;
 }
 
-console.log(getTotal(list))
+function setList(list) {
+    let table = '<thead><tr><td>Description</td><td>Amount</td><td>Value</td><td>Action</td></tr></thead><tbody>';
+    for (let key in list) {
+        table += '<tr><td>'+ list[key].desc +'</td><td>'+ list[key].amount +'</td><td>'+ list[key].value +'</td><td>Edit | Delete</td></tr>';
+    }
+    table += '</tbody>';
+    document.getElementById('listTable').innerHTML = table;
+}
+
+setList(list);
+
+console.log(getTotal(list));
