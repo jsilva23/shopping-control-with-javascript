@@ -31,7 +31,12 @@
                 <button onclick="updateData()" class="btn btn-light">Save</button>
                 <button onclick="resetForm()" class="btn btn-light">Cancel</button>
             </samp>
-            <button id="btnAdd" onclick="addData()" class="btn btn-light">Add</button>
+            <span id="btnAdd">
+                <button onclick="addData()" class="btn btn-light">Add</button>
+                <button onclick="resetForm()" class="btn btn-light">Reset</button>
+                <button onclick="deleteList()" class="btn btn-danger">Delete List</button>
+            </span>
+            
         </div>
 
         <div id="errors" style="display: none;"></div>
